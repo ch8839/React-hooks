@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  background: rgb(35, 39, 47);
+  color: rgb(235, 236, 240);
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -26,6 +28,31 @@
 
 .App-link {
   color: #61dafb;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+button {
+  height: 40px;
+  line-height: 40px;
+  width: 120px;
+  color: rgb(235, 236, 240);
+  background: rgb(8, 126, 164);
+  border: none;
+  border-radius: 10px;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+button:hover {
+  background-color: rgb(8, 126, 164, 0.6)
+}
+button:active {
+  transform: scaleX(0.95) scaleY(0.95);
 }
 
 @keyframes App-logo-spin {
