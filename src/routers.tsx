@@ -1,6 +1,7 @@
 import { Home } from './pages/Home/index.tsx'
 import * as hooksList from './hooks/index.ts'
 import * as reactApiList from './reactApi/index.ts'
+import * as componentsList from './components/index.tsx'
 
 import Navigation from './pages/navigation/index.tsx'
 
@@ -20,6 +21,15 @@ export const ApiRouters = Object.keys(reactApiList).map((name: string) => {
   return {
     name,
     path: '/react-api/'+name,
+    Component: item
+  }
+})
+
+export const ComponentsRouters = Object.keys(componentsList).map((name: string) => {
+  const item = (componentsList as any)[name]
+  return {
+    name,
+    path: '/components/'+name,
     Component: item
   }
 })
@@ -56,6 +66,11 @@ export const routers = [
     // Component() {
     //   return <h1>about</h1>
     // },
+  },
+  {
+    path: '/components',
+    element: <Navigation routers={ComponentsRouters}></Navigation>,
+    children: [...ComponentsRouters]
   },
  
 ]

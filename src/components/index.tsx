@@ -1,0 +1,5 @@
+export { default as captchaInput } from './captcha-input/example'
+export { default as mobx } from './mobx/index.tsx'
+export { default as mobxExp1 } from './mobx/exp1.tsx'
+export { default as mobxExp2} from './mobx/exp2.tsx'
+export { default as yoda } from './yoda/index'
