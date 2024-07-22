@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import Exp1 from './exp1'
 import Exp2 from './exp2'
 import Exp3 from './exp3'
+import Exp4 from './exp4'
+import Exp5 from './exp5'
+import Exp6 from './exp6'
 
 /**
  调用 set 函数 不会 改变已经执行的代码中当前的 state
@@ -39,6 +42,15 @@ function UseEffectExp() {
 
       <h2>更新对象</h2>
       <Exp3></Exp3>
+
+      <h2>更新时序</h2>
+      <Exp4></Exp4>
+
+      <h2>批量更新</h2>
+      <Exp5></Exp5>
+
+      <h2>使用技巧</h2>
+      <Exp6></Exp6>
     </div>
   )
 }

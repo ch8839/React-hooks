@@ -27,6 +27,8 @@ const Exp1 = () => {
 			{/* 只要携带了count，无论子组件是否使用每次count改变都会重新渲染
 			vue则不会，vue子组件只会在porps更新且使用到了props才会重新渲染 */}
       <CallbackChildrenComponent count={count} handleChildren={handleChildrenCallback} />
+
+      {/* <CallbackChildrenComponent2 handleChildren={handleChildrenCallback} /> */}
     </div>
   )
 }
@@ -41,7 +43,20 @@ const ChildrenComponent = (props: any) => {
 const CallbackChildrenComponent = React.memo((props: any) => {
   const { handleChildren } = props
   console.log('CallbackChildrenComponent rending', props.count) // 父组件重新render时不会触发子组件渲染
-  return <div onClick={handleChildren}>ChildrenComponent</div>
+  return <div onClick={handleChildren}>CallbackChildrenComponent</div>
+})
+
+//  React.memo相当于PureComponent
+const CallbackChildrenComponent2 = React.memo((props: any) => {
+  const { handleChildren } = props
+  const [count, setCount] = useState<number>(1)
+
+  const handleClick = () => {
+    setCount(count + 1)
+    handleChildren()
+  }
+  console.log('CallbackChildrenComponent2 rending') // 父组件重新render时不会触发子组件渲染
+  return <button onClick={handleClick}>add {count}</button>
 })
 
 const Exp2 = () => {
@@ -55,7 +70,7 @@ const Exp2 = () => {
   const getCountDouble = useCallback(() => {
     console.log('>>>getCountDouble', count)
     return count * 2
-  }, [])
+  }, [count])
 
 	useEffect(()=> {
 		// getCountDouble不加useCallback的话每次组件渲染都会执行useEffect
@@ -65,8 +80,8 @@ const Exp2 = () => {
 
   return (
     <div>
-      <button onClick={handleClick}>add</button>
-     
+      <button onClick={handleClick}>add-{count}</button>
+      <button onClick={getCountDouble}>getCountDouble</button>
     </div>
   )
 }

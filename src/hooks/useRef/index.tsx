@@ -12,14 +12,19 @@ import Exp3 from './exp3'
  */
 const Intro = () => {
   let ref = useRef(0)
+  const [flag, setFlag] = useState(false)
 
+  useEffect(() => {
+    console.log('>>>useEffect')
+  }, [flag])
   function handleClick() {
     // 修改 ref.current 不会触发重新渲染
     ref.current = ref.current + 1
+    // setFlag(!flag) // 强制刷新
     console.log('You clicked ' + ref.current + ' times!')
   }
-
-  return <button onClick={handleClick}>Click me!</button>
+  console.log('Intro render')
+  return <button onClick={handleClick}>Click me!{ref.current}</button>
 }
 
 function UseEffectExp() {

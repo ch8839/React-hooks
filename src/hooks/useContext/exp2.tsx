@@ -24,6 +24,9 @@ export default function MyApp() {
   const [theme, setTheme] = useState('light')
   const [count, setCount] = useState(0)
 
+  const data = useContext(CountContext) as ProviderProps
+  console.log('>>>useContext data', data.count)
+
   return (
     <MyProviders theme={theme} count={count} setCount={setCount}>
       <div>count: {count}</div>

@@ -36,12 +36,12 @@ const Exp1 = () => {
      <ul>
       {items.map((item, index) => 
          <li key={item.id}>
-          <Item index={index} data={item} onChange={updateItem2}></Item>
+          <Item index={index} data={item} onChange={updateItem1}></Item>
          </li>
       )}
      
      </ul>
-     
+     {JSON.stringify(items)}
     </div>
   )
 }

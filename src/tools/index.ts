@@ -1,0 +1,6 @@
+export { default as mobx } from './mobx/index.tsx'
+export { default as mobxExp1 } from './mobx/exp1.tsx'
+export { default as mobxExp2} from './mobx/exp2.tsx'
+export { default as mobxExp3} from './mobx/exp3.tsx'
+export { default as reduxjs} from './reduxjs/index.tsx'
+export { default as reduxjsExp2} from './reduxjs/Exp2.tsx'

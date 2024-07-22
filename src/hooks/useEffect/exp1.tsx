@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 function Exp1() {
   const [count, setCount] = useState(0)
   const [article, setArticle] = useState<any>(null)
+  const requestFlag = useRef(false)
 
   const fetchArticle = (id?: any) =>
     new Promise((reoslve) => {
@@ -23,6 +24,12 @@ function Exp1() {
         setArticle(article)
       }
     }
+
+    // 通过方式只请求一次
+    // if(!requestFlag.current) {
+    //   requestFlag.current = true
+    //   fetchData()
+    // }
 
     fetchData()
 

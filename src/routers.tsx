@@ -2,6 +2,7 @@ import { Home } from './pages/Home/index.tsx'
 import * as hooksList from './hooks/index.ts'
 import * as reactApiList from './reactApi/index.ts'
 import * as componentsList from './components/index.tsx'
+import * as toolsList from './tools/index.ts'
 
 import Navigation from './pages/navigation/index.tsx'
 
@@ -34,6 +35,14 @@ export const ComponentsRouters = Object.keys(componentsList).map((name: string) 
   }
 })
 
+export const ToolsRouters = Object.keys(toolsList).map((name: string) => {
+  const item = (toolsList as any)[name]
+  return {
+    name,
+    path: '/tools/'+name,
+    Component: item
+  }
+})
 
 export const routers = [
   {
@@ -71,6 +80,11 @@ export const routers = [
     path: '/components',
     element: <Navigation routers={ComponentsRouters}></Navigation>,
     children: [...ComponentsRouters]
+  },
+  {
+    path: '/tools',
+    element: <Navigation routers={ToolsRouters}></Navigation>,
+    children: [...ToolsRouters]
   },
  
 ]
