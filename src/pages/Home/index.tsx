@@ -17,9 +17,7 @@ export const Home = function() {
         >
           Learn React
         </a>
-        <Link to={'/hooks'}>Hooks</Link>
         <Link to={'/components'}>components</Link>
-        <Link to={'/react-api'}>react-api</Link>
         <Link to={'/tools'}>tools</Link>
       </header>
     </div>

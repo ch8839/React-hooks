@@ -1,5 +1,4 @@
 import { Outlet, NavLink } from 'react-router-dom'
-import { HooksRouters } from '../../routers'
 import './index.scss'
 
 interface IRouter {
@@ -9,6 +8,7 @@ interface IRouter {
 }
 
 interface IProps {
+  title?: string
   routers: Array<IRouter>
 }
 
@@ -17,7 +17,7 @@ const navigation = function (props: IProps) {
   return (
     <div className='navigation-container'>
       <div className='navigation-aside'>
-        <h2 className='navigation-title'>{'Hooks'}</h2>
+        <h2 className='navigation-title'>{props.title||'Hooks'}</h2>
         <div className='navigation-menu'>
           <ul>
             {routers.map((item) => {

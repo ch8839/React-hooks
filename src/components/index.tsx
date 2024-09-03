@@ -1,7 +1,3 @@
 export { default as captchaInput } from './captcha-input/example'
-export { default as Carousel } from './Carousel'
-export { default as Carousel2 } from './Carousel2'
 export { default as FlexBox } from './flex-box'
-export { default as popup } from './popup/index'
-export { default as WordleGame} from './react-wordle'
-export { default as yoda } from './yoda/index'
+export { default as JsCss } from './js-css'
