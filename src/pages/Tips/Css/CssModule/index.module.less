@@ -1,0 +1,34 @@
+.container {
+  width: 200px;
+  .header:extend(.base-box) {
+    // 继承
+    width: 100px;
+    height: 50px;
+    .title {
+      color: red;
+      font-size: 14px;
+    }
+  }
+  .content {
+    color: green;
+    .large-size; // Mixin
+  }
+
+  .footer {
+    color: red;
+    .translate-x(20px) // 带参数的 Mixin;
+  }
+}
+
+.base-box {
+  padding: 20px;
+  border: 1px solid white;
+}
+
+.large-size {
+  font-size: 18px;
+}
+
+.translate-x(@x) {
+  transform: translateX(@x);
+}

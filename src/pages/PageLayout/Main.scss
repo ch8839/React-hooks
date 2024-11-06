@@ -1,0 +1,6 @@
+.main {
+  padding: 50px;
+  flex: 1;
+  overflow: auto;
+  transform: translateZ(0); // 通过设置 transform 属性让 fixed 元素基于父容器定位
+}

@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import logo from '../../assets/logo.svg'
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.svg";
 
-export const Home = function() {
+export const Home = function () {
   return (
     <div className="Home">
       <header className="App-header">
@@ -17,9 +17,9 @@ export const Home = function() {
         >
           Learn React
         </a>
-        <Link to={'/components'}>components</Link>
-        <Link to={'/tools'}>tools</Link>
+
+        <Link to="/">let's go</Link>
       </header>
     </div>
-  )
-}
+  );
+};

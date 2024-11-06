@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 
 import CaptchaInput from './index'
 
-const CaptchaInputExp = (props: any)=> {
+export const CaptchaInputExp = (props: any)=> {
   const handleChange = (value: string)=> {
     console.log('value:', value)
   }
@@ -12,5 +12,3 @@ const CaptchaInputExp = (props: any)=> {
     </div>
   )
 }
-
-export default CaptchaInputExp

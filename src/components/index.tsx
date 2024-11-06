@@ -1,3 +1,4 @@
-export { default as captchaInput } from './captcha-input/example'
-export { default as FlexBox } from './flex-box'
-export { default as JsCss } from './js-css'
+export * from './captcha-input/example'
+export * from './flex-box'
+export * from './js-css'
+export * from './tree'

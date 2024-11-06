@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import './index.scss'
 
-const FlexBox = (props: any) => {
+export const FlexBox = (props: any) => {
   // flex1计算：
   // left 元素的初始大小是 50px（flex-basis: 50px）。right 元素的初始大小是 200px（flex-basis: 200px）
   // 剩余空间是 300px - 250px = 50px
@@ -21,5 +21,3 @@ const FlexBox = (props: any) => {
     </div>
   )
 }
-
-export default FlexBox

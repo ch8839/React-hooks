@@ -1,20 +1,21 @@
 import React from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useLoaderData,
-} from 'react-router-dom'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from "./pages/Home"
+import { PageLayout } from "./pages/PageLayout"
 import './App.css'
 
-import { routers } from './routers'
 
-const Router = createBrowserRouter(routers)
 
 function App() {
   return (
     <div className='App'>
-      <RouterProvider router={Router} fallbackElement={<p>Loading...</p>} />
+      <BrowserRouter>
+            <Routes>
+              <Route path="/home" Component={Home} />
+              <Route path="/*" Component={PageLayout} />
+            </Routes>
+            
+      </BrowserRouter>
     </div>
   )
 }
