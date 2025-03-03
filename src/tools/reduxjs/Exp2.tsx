@@ -5,7 +5,7 @@ import { Store } from './store/index'
 import { incremented, decremented, updateValue } from './store/counterReducer2'
 import type { RootState } from './store/index'
 
-function Exp1() {
+function Exp2() {
   const [count, setCount] = useState(0)
   const [article, setArticle] = useState<any>(null)
 
@@ -48,4 +48,4 @@ function Exp1() {
   )
 }
 
-export default Exp1
+export default Exp2

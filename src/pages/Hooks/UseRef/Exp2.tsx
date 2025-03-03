@@ -77,3 +77,12 @@ const MyInput3 = React.forwardRef<InputInstance, InputProps>((props, ref) => {
   }))
   return <input ref={inputRef}></input>;
 });
+
+
+const MyInput5 =((props: any) => {
+  return <input ref={props.ref}></input>;
+});
+
+const MyInput5WifthRef =  React.forwardRef<InputRef, InputProps>((props, ref) => {
+  return <MyInput5 {...props} ref={ref}></MyInput5>
+})

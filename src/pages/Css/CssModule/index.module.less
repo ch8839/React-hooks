@@ -1,0 +1,59 @@
+@prefix: content;
+
+.container {
+  width: 500px;
+  .header:extend(.base-box) {
+    // 继承
+    width: 100%;
+    height: 100px;
+    .title {
+      color: red;
+      font-size: 14px;
+    }
+  }
+  .content {
+    display: flex;
+    color: green;
+    .large-size; // Mixin
+    .base-box;
+    & .@{prefix}-left {
+      width: 100px;
+    }
+    & .@{prefix}-main {
+      flex:1
+    }
+  }
+
+  .footer {
+    color: red;
+    .translate-x(20px); // 带参数的 Mixin;
+    .typing(7ch);
+  }
+}
+
+.base-box {
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid white;
+}
+
+.large-size {
+  font-size: 18px;
+}
+
+.translate-x(@x) {
+  transform: translateX(@x);
+}
+
+.typing(@count) {
+  width: @count;
+  text-wrap: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(20) infinite alternate-reverse;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+}

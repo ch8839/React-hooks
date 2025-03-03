@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -8,6 +8,8 @@ import {
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import { PageRouters, IRouter } from "../../routers";
+
+import "./Menu.scss"
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -76,12 +78,22 @@ const renderMenuItems = (menu: IRouter[], parentPath = ""): MenuItem[] => {
 };
 
 export const MenuContainer = function () {
-  let navigate = useNavigate();
+  const { pathname } = useLocation();
+  const defaultOpenKeys = pathname
+    .split("/")
+    .slice(1)
+    .reduce((prev: string[], cur: string, index) => {
+      const curKey = index == 0 ? "/" + cur : prev[prev.length - 1] + "/" + cur;
+      console.log('curKey', curKey)
+      prev.push(curKey);
+      return prev;
+    }, []);
+  const navigate = useNavigate();
   const onClick: MenuProps["onClick"] = (e) => {
     // console.log("click ", e);
     // const keyPath = e.keyPath;
     // const originPath = keyPath.reverse().join("/");
-    const originPath = e.key
+    const originPath = e.key;
     console.log("originPath", originPath);
     navigate(originPath);
   };
@@ -89,13 +101,14 @@ export const MenuContainer = function () {
   const MenuList = renderMenuItems(PageRouters);
 
   return (
-    <div>
+    <div className="sider-container">
       <Menu
+        className="sider-menu"
         theme="dark"
         onClick={onClick}
         style={{ width: 256, height: "100%" }}
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        defaultSelectedKeys={[pathname]}
+        defaultOpenKeys={defaultOpenKeys}
         mode="inline"
         items={MenuList}
       />

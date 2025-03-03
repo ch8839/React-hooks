@@ -43,8 +43,9 @@ export const Exp2 = () => {
       console.log("prev1:", prev); // 1
       return prev + 1;
     });
+    handleAsyncCount()
 
-  }, [handleAsyncCount3]);
+  }, [handleAsyncCount]);
 
   const handleGetCount= useCallback(() => {
     handleAsyncCount();

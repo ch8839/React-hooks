@@ -116,7 +116,7 @@ checkBrowsers(paths.appPath, isInteractive)
     // Launch WebpackDevServer.
     devServer.startCallback(() => {
       if (isInteractive) {
-        clearConsole();
+        // clearConsole();
       }
 
       if (env.raw.FAST_REFRESH && semver.lt(react.version, '16.10.0')) {
@@ -128,7 +128,7 @@ checkBrowsers(paths.appPath, isInteractive)
       }
 
       console.log(chalk.cyan('Starting the development server...\n'));
-      openBrowser(urls.localUrlForBrowser);
+      // openBrowser(urls.localUrlForBrowser);
     });
 
     ['SIGINT', 'SIGTERM'].forEach(function (sig) {

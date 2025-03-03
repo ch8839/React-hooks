@@ -1,0 +1,45 @@
+@background-color1: rgba(249, 111, 104, 0.15);
+
+.container {
+  position: relative;
+  padding: 10px 30px;
+  line-height: 20px;
+  background-color: @background-color1;
+  color: #f96f68;
+  border-radius: 10px;
+  .text {
+    text-align: center;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 2px;
+    border: 8px solid transparent;
+    position: absolute;
+   }
+  &.left::before {
+    border-right: 8px solid @background-color1;
+    right: 100%; // absolute中 right这种是相对于relative父元素的长宽度
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.right::before {
+    border-left: 8px solid @background-color1;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.top::before {
+    border-bottom: 8px solid @background-color1;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+  }
+  &.bottom::before {
+    border-top: 8px solid @background-color1;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+  }
+}

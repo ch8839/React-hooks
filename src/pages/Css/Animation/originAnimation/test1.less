@@ -1,0 +1,25 @@
+.sector {
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(
+    from 0deg at 100% 100%,
+    rgba(0, 0, 255, 0.5) 0%,
+    rgba(0, 0, 255, 0) 100%
+  );
+  clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+  border-radius: 50%;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid white;
+  position: relative;
+  // transform: rotate(-45deg);
+  // animation: rotate-sector 3s linear infinite;;
+}
+
+@keyframes rotate-sector {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

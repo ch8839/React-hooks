@@ -1,8 +1,9 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { PageRouters, IRouter } from "../../routers";
 
-import "./Main.scss"
+import "./Main.scss";
 
 type TRenderRoutes = (
   routes: IRouter[],
@@ -37,21 +38,30 @@ const renderRoutes: TRenderRoutes = (routes, parentPath = "") => {
       return renderRoutes(children, routePath);
     }
 
-    return <Route key={routePath} path={routePath} Component={Component}></Route>;
+    return (
+      <Route key={routePath} path={routePath} Component={Component}></Route>
+    );
   });
 };
 
 export const Main = function () {
+  const location = useLocation();
+  console.log(">>>location", location);
+
   return (
     <div className="main">
       <Suspense fallback={<div>loading</div>}>
-        <Routes>
-          {renderRoutes(PageRouters)}
-          {/* <Route
+        <TransitionGroup>
+          <CSSTransition key={location.key} classNames="page" timeout={300}>
+            <Routes>
+              {renderRoutes(PageRouters)}
+              {/* <Route
             path="/components/FlexBox"
             Component={lazy(() => import("../../components/flex-box"))}
           ></Route> */}
-        </Routes>
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
       </Suspense>
     </div>
   );

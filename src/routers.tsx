@@ -1,20 +1,26 @@
+import React from "react";
 import { BrowserRouterProps } from "react-router-dom";
-import { Home } from "./pages/Home/index.tsx";
-import * as componentsList from "./components/index.tsx";
-import * as HooksList from "./pages/Hooks";
-import * as toolsList from "./tools/index.ts";
-import * as WebApiList from "./pages/WebApi";
-import * as TipsList from "./pages/Tips";
-
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
 
+import { Home } from "./pages/Home/index.tsx";
+import * as componentsList from "./components/index.tsx";
+import * as HooksList from "./pages/Hooks";
+import * as toolsList from "./tools/index.ts";
+import * as WebApiList from "./pages/WebApi";
+import * as CssList from "./pages/Css";
+import * as TipsList from "./pages/Tips";
+import * as DemoList from "./pages/demo";
+
+console.log(">>>toolsList", toolsList);
 export interface IRouter {
   path: string;
   redirect?: string;
+  // 表示任意类型的组件（函数组件或类组件）；仅函数组件：React.FC<Props>；仅类组件：React.ComponentClass
+  // 区别于JSX.Element，表示一个已渲染的 JSX 元素
   Component?: React.ComponentType<{}>;
   /**
    * 当前路由是否全屏显示
@@ -38,8 +44,22 @@ export interface IRouter {
   children?: IRouter[];
 }
 
+function isReactFunctionComponent(Component: any): boolean {
+  return typeof Component === "function";
+}
+
 function generateRouters(moduleList: any): IRouter[] {
   return Object.entries(moduleList).map(([name, module]: any) => {
+    if (isReactFunctionComponent(module)) {
+      return {
+        path: name,
+        meta: {
+          title: name,
+        },
+        Component: module,
+      };
+    }
+
     const subModule = Object.entries(module).map(([name, item]) => {
       return {
         path: name,
@@ -92,18 +112,16 @@ export const TipsRouters: IRouter[] = [
   },
 ];
 
-const ComponentsChildren: IRouter[] = Object.keys(componentsList).map(
-  (name: string) => {
-    const item = (componentsList as any)[name];
-    return {
-      path: name,
-      Component: item,
-      meta: {
-        title: name,
-      },
-    };
-  }
-);
+export const CssRouters: IRouter[] = [
+  {
+    path: "/CSS",
+    meta: {
+      title: "CSS",
+      Icon: <SettingOutlined />,
+    },
+    children: generateRouters(CssList),
+  },
+];
 
 const ComponentsRouters: IRouter[] = [
   {
@@ -112,7 +130,7 @@ const ComponentsRouters: IRouter[] = [
       title: "组件",
       Icon: <AppstoreOutlined />,
     },
-    children: ComponentsChildren,
+    children: generateRouters(componentsList),
   },
 ];
 
@@ -134,7 +152,18 @@ export const ToolsRouters: IRouter[] = [
       title: "工具",
       Icon: <SettingOutlined />,
     },
-    children: ToolsChildren,
+    children: generateRouters(toolsList),
+  },
+];
+
+export const DemoRouters: IRouter[] = [
+  {
+    path: "/demo",
+    meta: {
+      title: "demo",
+      Icon: <SettingOutlined />,
+    },
+    children: generateRouters(DemoList),
   },
 ];
 
@@ -144,6 +173,8 @@ export const PageRouters = [
   ...ToolsRouters,
   ...WebApiRouters,
   ...TipsRouters,
+  ...CssRouters,
+  ...DemoRouters,
 ];
 
 export const AllRouters = [

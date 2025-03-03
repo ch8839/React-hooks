@@ -1,0 +1,93 @@
+.content {
+  width: 500px;
+  height: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #cfe2ff;
+}
+
+.fixed-style {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateZ(0);
+}
+
+.dialog {
+  .fixed-style;
+  z-index: 2;
+
+  &-mask {
+    .fixed-style;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &-wrap {
+    .fixed-style;
+  }
+  &-content {
+    .fixed-style;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-card {
+
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cfe2ff;
+  }
+}
+
+.myfade-enter, .myfade-appear {
+  opacity: 0;
+  transform: scale(0.9);
+  color: blue;
+}
+
+.myfade-enter-active, .myfade-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s;
+  color: red;
+}
+
+.myfade-enter-done {
+  color: green;
+}
+
+.myfade-exit {
+  opacity: 1;
+}
+
+.myfade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s;
+}
+
+
+.mask-enter, .mask-appear {
+  opacity: 0;
+}
+
+.mask-enter-active, .mask-appear-active {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.mask-exit {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.myfade-exit-active {
+  opacity: 0;
+  transition: all 0.3s;
+}
