@@ -1,6 +1,9 @@
 export * as CaptchaInputfrom from './captcha-input/example'
+export * as Carousel from './Carousel'
 export * as Drag from "./Drag"
+export * as EmblaCarouselExp1 from './EmblaCarousel'
 export * as FlexBox from './flex-box'
+export * as ImageList from './ImageList'
 export * as SimpleTooltip from './simple-tooltip'
 export * as Tabs from './Tabs'
 export * as TodoList from './TodoList'

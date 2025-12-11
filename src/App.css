@@ -1,6 +1,7 @@
 .App {
   background: rgb(35, 39, 47);
   color: rgb(235, 236, 240);
+  height: 100%;
 }
 
 .App-logo {

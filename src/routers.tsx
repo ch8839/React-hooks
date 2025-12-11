@@ -45,10 +45,11 @@ export interface IRouter {
 }
 
 function isReactFunctionComponent(Component: any): boolean {
-  return typeof Component === "function";
+  return typeof Component === "function" || typeof Component.type === "function";
 }
 
 function generateRouters(moduleList: any): IRouter[] {
+  // console.log(">>>moduleList", moduleList);
   return Object.entries(moduleList).map(([name, module]: any) => {
     if (isReactFunctionComponent(module)) {
       return {
@@ -59,23 +60,30 @@ function generateRouters(moduleList: any): IRouter[] {
         Component: module,
       };
     }
-
-    const subModule = Object.entries(module).map(([name, item]) => {
-      return {
-        path: name,
-        meta: {
-          title: name,
-        },
-        Component: item as React.ComponentType<{}>,
-      };
-    });
     return {
       path: name,
       meta: {
         title: name,
       },
-      children: subModule,
-    };
+      children: generateRouters(module),
+    }
+
+    // const subModule = Object.entries(module).map(([name, item]) => {
+    //   return {
+    //     path: name,
+    //     meta: {
+    //       title: name,
+    //     },
+    //     Component: item as React.ComponentType<{}>,
+    //   };
+    // });
+    // return {
+    //   path: name,
+    //   meta: {
+    //     title: name,
+    //   },
+    //   children: subModule,
+    // };
   });
 }
 

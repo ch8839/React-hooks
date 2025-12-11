@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Width = (props: any) => {
+export const WidthBase = (props: any) => {
   return (
     <>
       {/* auto宽度会默认填满其包含块（父容器）的宽度，减去任何 padding 和 margin */}

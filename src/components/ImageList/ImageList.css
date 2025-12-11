@@ -1,0 +1,181 @@
+.image-list-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* 背景层基础样式 */
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  /* 使用 GPU 加速 */
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+/* 当前背景层 */
+.background-layer.current-background {
+  background-image: var(--current-background);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--transition-duration) ease-out;
+}
+
+/* 下一个背景层 - 用于过渡动画 */
+.background-layer.next-background {
+  background-image: var(--next-background);
+  opacity: 0;
+  z-index: -2;
+  transition: opacity var(--transition-duration) ease-out;
+}
+
+/* 容器悬浮时显示当前背景 */
+.image-list-container:hover .background-layer.current-background {
+  opacity: 0.3;
+}
+
+/* 过渡状态时的背景切换 - 使用更精确的选择器 */
+.image-list-container[style*="--is-transitioning: 1"] .background-layer.current-background {
+  opacity: 0 !important;
+  z-index: -2;
+}
+
+.image-list-container[style*="--is-transitioning: 1"] .background-layer.next-background {
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* 确保过渡状态下hover也能正确显示 */
+.image-list-container[style*="--is-transitioning: 1"]:hover .background-layer.next-background {
+  opacity: 0.3;
+}
+
+/* 图片列表容器 */
+.image-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 图片项容器 - 使用绝对定位 */
+.image-item {
+  position: absolute;
+  /* GPU 加速 */
+  /* will-change: transform, height;
+  transform: translateZ(0); */
+}
+
+/* 图片包装器 */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: 
+    box-shadow var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  /* GPU 加速 */
+  /* will-change: box-shadow;
+  transform: translateZ(0); */
+}
+
+/* 图片样式 */
+.image-wrapper img {
+  display: block;
+  transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  /* GPU 加速 */
+  /* will-change: transform;
+  transform: translateZ(0); */
+}
+
+/* 悬浮状态 */
+.image-item.hovered .image-wrapper {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.image-item.hovered .image-wrapper img {
+  transform: scale(1.02);
+}
+
+/* 性能优化：减少重绘和回流 */
+.image-item {
+  /* contain: layout style paint; */
+}
+
+.image-wrapper {
+  /* contain: layout style paint; */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .image-item {
+    width: 280px !important;
+  }
+  
+  .image-list-container {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-item {
+    width: 260px !important;
+  }
+  
+  .image-list-container {
+    padding: 20px 0;
+  }
+}
+
+/* 预加载优化 */
+.image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  z-index: -1;
+}
+
+.image-wrapper img[src] + *::before {
+  display: none;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 滚动优化 */
+.image-list-container {
+  scroll-behavior: smooth;
+}
+
+/* 减少动画在滚动时的性能影响 */
+@media (prefers-reduced-motion: reduce) {
+  .image-item,
+  .image-wrapper,
+  .image-wrapper img,
+  .background-layer {
+    transition: none;
+  }
+} 

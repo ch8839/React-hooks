@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 
-export const MotionTest1 = ()=> {
+export const ImageErrorHandle = ()=> {
   const handleError = useCallback((e: React.SyntheticEvent<HTMLImageElement, Event> )=> {
     const fallbackSrc = "https://loremflickr.com/320/240/cat?lock=0"
     e.currentTarget.onerror = null // 防止占位图加载失败时再次触发 onerror，避免递归循环

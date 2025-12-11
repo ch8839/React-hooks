@@ -77,7 +77,7 @@ export const DragExp1: React.FC<any> = (props) => {
 
   return (
     <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCenter}>
-      <SortableContext items={items} strategy={horizontalListSortingStrategy}>
+      <SortableContext items={items.map((i) => i.id)} strategy={horizontalListSortingStrategy}>
         <div style={{display: "flex", gap: "20px"}}>
         {items.map<React.ReactNode>((item) => (
             <DraggableTag tag={item} key={item.id} />

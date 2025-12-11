@@ -30,7 +30,7 @@ export const LayoutRouters: IRouter[] = [
           },
           {
             path: "/main/app2",
-            Component: App2,
+            Component: App1,
           },
         ],
       },

@@ -79,7 +79,7 @@ const TableTemplate = () => {
   const handleTableChange = (newPagination) => {
     setPagination((prev) => {
       const updatedPagination = { ...prev, ...newPagination };
-      fetchTableData({ ...searchParams, page: updatedPagination.current, pageSize: updatedPagination.pageSize });
+      fetchTableData({ page: updatedPagination.current, pageSize: updatedPagination.pageSize });
       return updatedPagination;
     });
   };
@@ -92,7 +92,7 @@ const TableTemplate = () => {
   const handleDelete = (key) => {
     message.success("Deleted successfully");
     setPagination((prev) => ({ ...prev, current: 1 }));
-    fetchTableData({ ...searchParams, page: 1 });
+    fetchTableData({ page: 1 });
   };
 
   const handleModalOk = async () => {
@@ -103,7 +103,7 @@ const TableTemplate = () => {
     setModalVisible(false);
     setEditingItem(null);
     setPagination({ ...pagination, current: 1 });
-    fetchTableData({ ...searchParams, page: 1 });
+    fetchTableData({ page: 1 });
   };
 
   return (

@@ -16,6 +16,19 @@ interface Props {
   searchParams: any;
 }
 
+const startPolling = (requestFn: ()=> Promise<any>, polling: number)=> {
+  
+  let timeoutRef
+  const pollRequest = ()=> {
+    timeoutRef = setTimeout(async()=> {
+      const data = requestFn()
+      pollRequest()
+    }, polling)
+  }
+  pollRequest()
+  return timeoutRef
+}
+
 const fetchData = async (params) => {
   console.log("Fetching data with params:", params);
   return new Promise((resolve, reject) => {
@@ -52,8 +65,8 @@ export const TableList = forwardRef<Ref, Props>(
       try {
         const res = await fetchData({
           ...searchParams,
-          current: params.current ?? pagination.current,
-          pageSize: pagination.pageSize,
+          page: params.page ?? pagination.current,
+          pageSize: params.pageSize ?? pagination.pageSize,
         });
         setData(res.data);
         setPagination((prev) => ({ ...prev, total: res.total }));
@@ -66,7 +79,8 @@ export const TableList = forwardRef<Ref, Props>(
 
     const reload = () => {
       setPagination((prev) => ({ ...prev, current: 1 }));
-      fetchTableData({ current: 1 });
+      fetchTableData({ page: 1 })
+      // startPolling(()=> fetchTableData({ page: 1 }), 2000);
     };
 
     useEffect(() => {
@@ -86,7 +100,7 @@ export const TableList = forwardRef<Ref, Props>(
         onChange={(newPagination) => {
           setPagination((prev) => ({ ...prev, ...newPagination }));
           fetchTableData({
-            current: newPagination.current,
+            page: newPagination.current,
             pageSize: newPagination.pageSize,
           });
         }}
