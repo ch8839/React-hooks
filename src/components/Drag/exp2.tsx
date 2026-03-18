@@ -11,6 +11,7 @@ import type { DragEndEvent } from "@dnd-kit/core";
 import {
   arrayMove,
   horizontalListSortingStrategy,
+  verticalListSortingStrategy,
   SortableContext,
   useSortable,
 } from "@dnd-kit/sortable";
@@ -111,11 +112,12 @@ export const DragExp2: React.FC<any> = (props) => {
   return (
     <DndContext
       sensors={sensors}
+      modifiers={[restrictToVerticalAxis]}
       onDragEnd={handleDragEnd}
       collisionDetection={closestCenter}
     >
-      <SortableContext items={items} strategy={horizontalListSortingStrategy}>
-        <div style={{ display: "flex", gap: "20px" }}>
+      <SortableContext items={items} strategy={verticalListSortingStrategy}>
+        <div style={{ display: "flex", gap: "20px", flexDirection: "column" }}>
           {items.map<React.ReactNode>((item) => (
             <DraggableTag tag={item} key={item.id} />
           ))}

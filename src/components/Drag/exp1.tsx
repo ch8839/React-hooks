@@ -63,6 +63,8 @@ export const DragExp1: React.FC<any> = (props) => {
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
+    console.log("active", active);
+    console.log("over", over);
     if (!over) {
       return;
     }

@@ -28,6 +28,7 @@ export const InitialValues = () => {
   }, []);
 
   useEffect(() => {
+    // 当 请求到数据后loading 为 false 时，重置表单初始值
     if (!loading) {
       form.resetFields();
     }
