@@ -15,6 +15,19 @@ const zhCN = {
     "progress.downloadSpeed": "下载速度",
     "progress.retrievalSpeed": "资源读取速度",
     "progress.remainingTime": "预计剩余时间",
+    device_upgrade_alert: "设备升级提醒",
+    intel_cpu_microcode_low_warn:
+        "检测到您的电脑正在使用英特尔第 13 或 14 代处理器，且当前系统微代码版本较低，可能存在处理器稳定性问题，容易导致游戏运行中崩溃、闪退、卡死或画面异常。",
+    suggest_update_bios_microcode:
+        "为确保游戏稳定运行，我们强烈建议您将主板 BIOS 更新至最新版本，并使用英特尔 0x12B 及以上 微代码版本。",
+    cpu_name_label: "CPU 名称：{CPU 名称}",
+    motherboard_name_label: "主板名称：{主板名称}",
+    current_microcode_version: "当前微代码版本：{微代码版本}",
+    bios_version_label: "BIOS 版本：{BIOS 版本}",
+    bios_release_date: "BIOS 发布日期：{BIOS 发布日期}",
+    check_intel_doc_solution:
+        "您可前往 《Intel 13/14 代处理器异常问题说明文档》 查看详细解决方案。若问题仍未解决，可通过启动器【客服帮助】联系我们。",
+    message_center: "消息中心",
     "404": "暂无游戏",
 }
 const enUS = {
@@ -35,6 +48,19 @@ const enUS = {
     "progress.downloadSpeed": "Download speed",
     "progress.retrievalSpeed": "Verification speed",
     "progress.remainingTime": "Est. time left",
+    device_upgrade_alert: "Device Upgrade Reminder",
+    intel_cpu_microcode_low_warn:
+        "We have detected that your computer is using a 13th Gen or 14th Gen Intel® processor, and the current system microcode version is outdated. This may lead to processor stability issues that could cause the game to crash, exit unexpectedly, freeze, or display graphical abnormalities.",
+    suggest_update_bios_microcode:
+        "To ensure stable game performance, we strongly recommend updating your motherboard BIOS to the latest version and using Intel microcode version 0x12B or later.",
+    cpu_name_label: "CPU Name: {CPU 名称}",
+    motherboard_name_label: "Motherboard Name: {主板名称}",
+    current_microcode_version: "Current Microcode Version: {微代码版本}",
+    bios_version_label: "BIOS Version: {BIOS 版本}",
+    bios_release_date: "BIOS Release Date: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "For detailed solutions, please refer to the 13th/14th Gen Intel Processor Issue Explanation Guide. If the problem persists, please contact us through Customer Support in the game launcher.",
+    message_center: "Message Center",
     "404": "No games yet",
 }
 const viVN = {
@@ -54,6 +80,19 @@ const viVN = {
     "progress.downloadSpeed": "Tốc độ tải",
     "progress.retrievalSpeed": "Tốc độ truy xuất tài nguyên",
     "progress.remainingTime": "Ước tính thời gian còn lại",
+    device_upgrade_alert: "Nhắc nhở nâng cấp thiết bị",
+    intel_cpu_microcode_low_warn:
+        "Chúng tôi phát hiện thấy máy tính của bạn đang sử dụng bộ xử lý Intel® thế hệ 13 hoặc 14, và phiên bản vi mã hệ thống hiện tại đã lỗi thời. Điều này có thể dẫn đến các vấn đề về độ ổn định của bộ xử lý, gây ra tình trạng trò chơi bị treo, thoát đột ngột, đóng băng hoặc hiển thị bất thường về đồ họa.",
+    suggest_update_bios_microcode:
+        "Để đảm bảo hiệu suất trò chơi ổn định, bạn nên cập nhật BIOS của bo mạch chủ lên phiên bản mới nhất và sử dụng phiên bản vi mã Intel từ 0x12B trở lên.",
+    cpu_name_label: "Tên CPU: {CPU 名称}",
+    motherboard_name_label: "Tên bo mạch chủ: {主板名称}",
+    current_microcode_version: "Phiên bản vi mã hiện tại: {微代码版本}",
+    bios_version_label: "Phiên bản BIOS: {BIOS 版本}",
+    bios_release_date: "Ngày Phát Hành BIOS: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Để biết giải pháp chi tiết, vui lòng tham khảo Hướng dẫn giải thích sự cố bộ xử lý Intel thế hệ 13/14. Nếu vấn đề vẫn tiếp diễn, vui lòng liên hệ với chúng tôi qua Bộ phận Hỗ trợ khách hàng trong trình khởi chạy trò chơi.",
+    message_center: "Trung tâm thông báo",
     "404": "Chưa có game",
 }
 const thTH = {
@@ -73,6 +112,19 @@ const thTH = {
     "progress.downloadSpeed": "ความเร็วการโหลด",
     "progress.retrievalSpeed": "ความเร็วในการดึงทรัพยากร",
     "progress.remainingTime": "เหลืออีกประมาณ",
+    device_upgrade_alert: "แจ้งเตือนอัปเกรดอุปกรณ์",
+    intel_cpu_microcode_low_warn:
+        "เราตรวจพบว่าคอมพิวเตอร์ของคุณใช้โปรเซสเซอร์ Intel® เจนเนอเรชั่น 13 หรือเจนเนอเรชั่น 14 และเวอร์ชันไมโครโค้ดระบบปัจจุบันล้าสมัยแล้ว ซึ่งอาจนำไปสู่ปัญหาความไม่เสถียรของโปรเซสเซอร์ ที่อาจทำให้เกมหยุดทำงาน ปิดโดยไม่คาดคิด ค้าง หรือแสดงผลกราฟิกผิดปกติ",
+    suggest_update_bios_microcode:
+        "เพื่อให้มั่นใจถึงประสิทธิภาพการเล่นเกมที่เสถียร เราขอแนะนำอย่างยิ่งให้อัปเดต BIOS เมนบอร์ดของคุณเป็นเวอร์ชันล่าสุด และใช้ไมโครโค้ด Intel เวอร์ชัน 0x12B หรือใหม่กว่า",
+    cpu_name_label: "ชื่อ CPU: {CPU 名称}",
+    motherboard_name_label: "ชื่อเมนบอร์ด: {主板名称}",
+    current_microcode_version: "เวอร์ชันไมโครโต้ดปัจจุบัน: {微代码版本}",
+    bios_version_label: "เวอร์ชัน BIOS: {BIOS 版本}",
+    bios_release_date: "วันที่วางจำหน่าย BIOS: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "สำหรับรายละเอียดวิธีแก้ปัญหา โปรดดูคู่มืออธิบายปัญหาของโปรเซสเซอร์ Intel เจนเนอเรชั่น 13/14 ในการอ้างอิง หากยังมีปัญหาอยู่ โปรดติดต่อเราผ่านฝ่ายบริการลูกค้าในตัวเปิดใช้งานเกม",
+    message_center: "ศูนย์ข้อความ",
     "404": "ยังไม่มีเกม",
 }
 const ruRU = {
@@ -93,6 +145,19 @@ const ruRU = {
     "progress.downloadSpeed": "Скорость загрузки",
     "progress.retrievalSpeed": "Скорость извлечения ресурсов",
     "progress.remainingTime": "Осталось",
+    device_upgrade_alert: "Напоминание об обновлении устройства",
+    intel_cpu_microcode_low_warn:
+        "Мы обнаружили, что в вашей системе используется процессор Intel® Core™ 13-го или 14-го поколения с устаревшим микрокодом. Это приводит к нестабильной работе процессора, что, в свою очередь, может вызвать сбои в игре, внезапные завершения работы, зависания или графические артефакты.",
+    suggest_update_bios_microcode:
+        "Для обеспечения стабильной работы игры обновите BIOS материнской платы до последней версии и используйте микрокод Intel версии 0x12B или выше.",
+    cpu_name_label: "Модель процессора: {CPU 名称}",
+    motherboard_name_label: "Модель материнской платы: {主板名称}",
+    current_microcode_version: "Текущая версия микрокода: {微代码版本}",
+    bios_version_label: "Версия BIOS: {BIOS 版本}",
+    bios_release_date: "Дата релиза BIOS: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Подробные способы решения описаны в руководстве по исправлению ошибок Intel 13/14-го поколений. Если ошибка не исчезнет, обратитесь в службу поддержки через загрузчик.",
+    message_center: "Центр сообщений",
     "404": "Игр пока нет",
 }
 const ptBR = {
@@ -113,6 +178,19 @@ const ptBR = {
     "progress.downloadSpeed": "Velocidade de download",
     "progress.retrievalSpeed": "Velocidade de recuperação de recursos",
     "progress.remainingTime": "Tempo restante estimado",
+    device_upgrade_alert: "Lembrete de Upgrade de Dispositivo",
+    intel_cpu_microcode_low_warn:
+        "Detectamos que seu computador está usando um processador Intel® de 13ª ou 14ª geração, e a versão do microcódigo de sistema atual está desatualizada. Isso pode causar problemas de estabilidade do processador que podem fazer o jogo travar, fechar-se inesperadamente ou exibir anomalias gráficas.",
+    suggest_update_bios_microcode:
+        "Para garantir um desempenho estável do jogo, recomendamos muito que você atualize a BIOS de sua placa-mãe para a versão mais recente e use o microcódigo Intel versão 0x12B ou mais recente.",
+    cpu_name_label: "Nome da CPU: {CPU 名称}",
+    motherboard_name_label: "Nome da placa-mãe: {主板名称}",
+    current_microcode_version: "Versão atual do microcódigo: {微代码版本}",
+    bios_version_label: "Versão da BIOS: {BIOS 版本}",
+    bios_release_date: "Data de lançamento da BIOS: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Para ver soluções detalhadas, consulte o Guia Explicativo de Problemas com Processadores Intel de 13ª/14ª Geração. Se o problema persistir, entre em contato conosco por meio do Suporte ao Cliente no inicializador do jogo.",
+    message_center: "Centro de Mensagens",
     "404": "Ainda sem jogos",
 }
 const koKR = {
@@ -132,6 +210,19 @@ const koKR = {
     "progress.downloadSpeed": "다운로드 속도",
     "progress.retrievalSpeed": "리소스 로딩 속도",
     "progress.remainingTime": "남은 예상 시간",
+    device_upgrade_alert: "설비 업그레이드 알림",
+    intel_cpu_microcode_low_warn:
+        "현재 PC가 인텔 13세대 또는 14세대 프로세서를 사용하고 있고, 시스템 마이크로코드 버전이 낮아서 프로세서 안정성 문제가 있을 수 있습니다. 이로 인해 게임 실행 중 충돌, 튕김, 렉, 오류가 발생할 수 있습니다.",
+    suggest_update_bios_microcode:
+        "안정적인 게임 운영을 위해 메인보드 BIOS를 최신 버전으로 업데이트하고, 인텔 0x12B 이상의 마이크로코드 버전을 사용하시길 권장합니다.",
+    cpu_name_label: "CPU 명칭: {CPU 名称}",
+    motherboard_name_label: "메인보드 명칭: {主板名称}",
+    current_microcode_version: "현재 마이크로코드 버전: {微代码版本}",
+    bios_version_label: "BIOS 버전: {BIOS 版本}",
+    bios_release_date: "BIOS 게시 날짜: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "자세한 해결 방안은 **<인텔 13/14세대 프로세서 오류 현상 안내>**에서 확인하실 수 있습니다. 문제가 여전히 해결되지 않을 경우 게임 런처 [고객센터]를 통해 문의하시기 바랍니다.",
+    message_center: "메시지 센터",
     "404": "현재 설치된 게임이 없습니다",
 }
 const jaJP = {
@@ -151,6 +242,19 @@ const jaJP = {
     "progress.downloadSpeed": "ダウンロード速度",
     "progress.retrievalSpeed": "リソースの読み取り速度",
     "progress.remainingTime": "残り時間",
+    device_upgrade_alert: "デバイスアップグレードについて",
+    intel_cpu_microcode_low_warn:
+        "ご利用の PC は Intel 第13/第14世代プロセッサーを使用し、現在のシステムのマイクロコードのバージョンが低いため、CPU が不安定になる可能性があります。そのため、ゲーム中に強制終了、クラッシュ、フリーズ、画面異常が発生しやすくなります。",
+    suggest_update_bios_microcode:
+        "安定した状態でゲームをお楽しみいただくため、マザーボードの BIOS を最新版にアップデートし、0x12B 以上の Intel マイクロコードを使用することを強く推奨します。",
+    cpu_name_label: "CPU 名称：{CPU 名称}",
+    motherboard_name_label: "マザーボード名称：{主板名称}",
+    current_microcode_version: "現在のマイクロコードのバージョン：{微代码版本}",
+    bios_version_label: "BIOS のバージョン：{BIOS 版本}",
+    bios_release_date: "BIOS リリース日：{BIOS 发布日期}",
+    check_intel_doc_solution:
+        "『Intel 第 13 / 第 14 世代 CPU の不具合に関する説明』で詳しい解決方法をご覧ください。問題が解決しない場合は、ゲームランチャーの【カスタマーサービス】までお問い合わせください。",
+    message_center: "メッセージセンター",
     "404": "ゲームがありません",
 }
 const itIT = {
@@ -171,6 +275,19 @@ const itIT = {
     "progress.downloadSpeed": "Velocità di download",
     "progress.retrievalSpeed": "Velocità di recupero delle risorse",
     "progress.remainingTime": "Tempo stimato rimanente",
+    device_upgrade_alert: "Promemoria di aggiornamento del dispositivo",
+    intel_cpu_microcode_low_warn:
+        "Abbiamo rilevato che il tuo computer utilizza un processore Intel® di 13ª o 14ª generazione e che la versione attuale del microcodice di sistema è obsoleta. Questo potrebbe provocare problemi di stabilità del processore, che a loro volta possono causare crash del gioco, chiusure improvvise, blocchi o anomalie grafiche.",
+    suggest_update_bios_microcode:
+        "Per garantire prestazioni di gioco stabili, ti consigliamo vivamente di aggiornare il BIOS della scheda madre all'ultima versione e di utilizzare la versione 0x12B o più recente del microcodice Intel.",
+    cpu_name_label: "Nome CPU: {CPU 名称}",
+    motherboard_name_label: "Nome scheda madre: {主板名称}",
+    current_microcode_version: "Versione attuale del microcodice: {微代码版本}",
+    bios_version_label: "Versione BIOS: {BIOS 版本}",
+    bios_release_date: "Data di distribuzione BIOS: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Per soluzioni dettagliate, fai riferimento alla guida sui problemi dei processori Intel di 13ª/14ª generazione. Se il problema persiste, contatta la nostra assistenza clienti nel launcher dei giochi.",
+    message_center: "Centro messaggi",
     "404": "Ancora nessun gioco",
 }
 const idID = {
@@ -191,6 +308,19 @@ const idID = {
     "progress.downloadSpeed": "Kecepatan unduhan",
     "progress.retrievalSpeed": "Kecepatan pengambilan sumber daya",
     "progress.remainingTime": "Estimasi sisa waktu",
+    device_upgrade_alert: "Pengingat Pembaruan Perangkat",
+    intel_cpu_microcode_low_warn:
+        "Kami mendeteksi bahwa komputer Anda menggunakan prosesor Intel® Gen ke-13 atau ke-14, dan versi mikrokode sistem saat ini sudah kedaluwarsa. Hal ini dapat menyebabkan masalah stabilitas prosesor yang mengakibatkan game macet, keluar secara tiba-tiba, hang, atau mengalami anomali grafis.",
+    suggest_update_bios_microcode:
+        "Untuk memastikan performa game yang stabil, kami sangat menyarankan Anda untuk memperbarui BIOS motherboard ke versi terbaru dan menggunakan mikrokode Intel versi 0x12B atau yang lebih baru.",
+    cpu_name_label: "Nama CPU: {CPU 名称}",
+    motherboard_name_label: "Nama Motherboard: {主板名称}",
+    current_microcode_version: "Versi Mikrokode Saat Ini: {微代码版本}",
+    bios_version_label: "Versi BIOS: {BIOS 版本}",
+    bios_release_date: "Tanggal Rilis BIOS: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Untuk solusi lebih lanjut, silakan merujuk ke Panduan Penjelasan Masalah Prosesor Intel Gen ke-13/14. Jika masalah berlanjut, silakan hubungi kami melalui Dukungan Pelanggan di peluncur game.",
+    message_center: "Pusat Pesan",
     "404": "Belum ada game",
 }
 const frFR = {
@@ -211,6 +341,19 @@ const frFR = {
     "progress.downloadSpeed": "Vitesse de téléchargement",
     "progress.retrievalSpeed": "Vitesse de récupération des ressources",
     "progress.remainingTime": "Temps restant estimé",
+    device_upgrade_alert: "Rappel de mise à niveau de l'appareil",
+    intel_cpu_microcode_low_warn:
+        "Nous avons détecté que votre ordinateur utilisait un processeur Intel® de 13e ou 14e génération, et la version actuelle du microcode du système est obsolète. Cela pourrait entraîner des problèmes de stabilité du processeur et provoquer un crash du jeu, une fermeture inattendue, des gels ou des problèmes graphiques et d'affichage.",
+    suggest_update_bios_microcode:
+        "Afin d'assurer la stabilité des performances de jeu, nous vous recommandons fortement de mettre à jour le BIOS de votre carte mère vers la dernière version disponible et d'utiliser la version du microcode Intel 0x12B ou ultérieure.",
+    cpu_name_label: "Nom du CPU : {CPU 名称}",
+    motherboard_name_label: "Nom de la carte mère : {主板名称}",
+    current_microcode_version: "Version actuelle du microcode : {微代码版本}",
+    bios_version_label: "Version du BIOS : {BIOS 版本}",
+    bios_release_date: "Date de sortie du BIOS : {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Pour des solutions détaillées, veuillez consulter le guide explicatif du processeur Intel® de 13e/14e génération. Si le problème persiste, veuillez nous contacter via le Service client dans la lanceur de jeu.",
+    message_center: "Centre de messagerie",
     "404": "Aucun jeu pour le moment",
 }
 const esMX = {
@@ -231,6 +374,19 @@ const esMX = {
     "progress.downloadSpeed": "Velocidad de descarga",
     "progress.retrievalSpeed": "Velocidad de recuperación de recursos",
     "progress.remainingTime": "Tiempo est. restante",
+    device_upgrade_alert: "Recordatorio de actualización del dispositivo",
+    intel_cpu_microcode_low_warn:
+        "Hemos detectado que tu computadora usa un procesador Intel® de 13.ª o 14.ª generación, y nuestra versión actual del microcódigo del sistema está desactualizada. Esto puede provocar problemas de estabilidad que podrían causar que el juego se bloquee, se cierre inesperadamente, se congele o muestre anomalías gráficas.",
+    suggest_update_bios_microcode:
+        "Para garantizar un rendimiento estable del juego, recomendamos encarecidamente actualizar el BIOS de la placa madre a la última versión y usar la versión 0x12B o posterior del microcódigo de Intel.",
+    cpu_name_label: "Nombre del CPU: {CPU 名称}",
+    motherboard_name_label: "Nombre de la placa madre: {主板名称}",
+    current_microcode_version: "Versión actual del microcódigo: {微代码版本}",
+    bios_version_label: "Versión BIOS: {BIOS 版本}",
+    bios_release_date: "BIOS Fecha de lanzamiento: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Consulta la guía explicativa sobre el problema con los procesadores Intel de 13.ª y 14.ª generación para obtener soluciones detalladas. Si el problema persiste, contáctanos a través de soporte al cliente en el lanzador de juegos.",
+    message_center: "Centro de mensajes",
     "404": "Aún no hay juegos",
 }
 const deDE = {
@@ -251,6 +407,19 @@ const deDE = {
     "progress.downloadSpeed": "Download-Geschwindigkeit",
     "progress.retrievalSpeed": "Ressourcenabrufgeschwindigkeit",
     "progress.remainingTime": "Geschätzte Restdauer",
+    device_upgrade_alert: "Erinnerung zur Geräteaktualisierung",
+    intel_cpu_microcode_low_warn:
+        "Wir haben festgestellt, dass dein Computer einen Intel® Prozessor der 13. oder 14. Generation nutzt und deine aktuelle Version des System-Microcodes veraltet ist. Dies kann zu Problemen bei der Prozessorstabilität führen, was wiederum zu Spielabstürzen, unerwartetem Schließen des Spiels oder Grafikanomalien führen kann.",
+    suggest_update_bios_microcode:
+        "Um eine stabile Performance des Spiels zu garantieren, empfehlen wir dir die Aktualisierung deines Motherboard BIOS auf die neueste Version und die Verwendung der Intel Microcode-Version 0x12B oder neuer.",
+    cpu_name_label: "CPU-Name: {CPU 名称}",
+    motherboard_name_label: "Motherboard-Name: {主板名称}",
+    current_microcode_version: "Aktuelle Microcode-Version: {微代码版本}",
+    bios_version_label: "BIOS-Version: {BIOS 版本}",
+    bios_release_date: "BIOS-Veröffentlichungsdatum: {BIOS 发布日期}",
+    check_intel_doc_solution:
+        "Für detaillierte Problemlösungen lies bitte den Erklärungsleitfaden für Intel Prozessoren der 13./14. Generation. Sollte das Problem weiterhin bestehen, kontaktiere bitte den Kundendienst über den Launcher des Spiels.",
+    message_center: "Nachrichtencenter",
     "404": "Noch keine Spiele",
 }
 const zhTW = {
@@ -270,6 +439,19 @@ const zhTW = {
     "progress.downloadSpeed": "下載速度",
     "progress.retrievalSpeed": "資源讀取速度",
     "progress.remainingTime": "預計剩餘時間",
+    device_upgrade_alert: "設備升級提醒",
+    intel_cpu_microcode_low_warn:
+        "偵測到您的電腦正在使用第 13 或 14 代 Intel® 處理器，且目前的系統微碼版本偏舊，可能存在處理器穩定性問題，容易導致遊戲執行時發生當機、閃退、卡死或畫面異常。",
+    suggest_update_bios_microcode:
+        "為確保遊戲穩定運行，我們強烈建議您將主機板 BIOS 更新至最新版本，並使用 Intel 0x12B 及以上微碼版本。",
+    cpu_name_label: "CPU 名稱：{CPU 名称}",
+    motherboard_name_label: "主機板名稱：{主板名称}",
+    current_microcode_version: "目前微碼版本：{微代码版本}",
+    bios_version_label: "BIOS 版本：{BIOS 版本}",
+    bios_release_date: "BIOS 發布日期：{BIOS 发布日期}",
+    check_intel_doc_solution:
+        "您可前往 《Intel 13/14 代處理器異常問題說明文件》查看詳細解決方案。若問題仍未排除，可透過啟動器中的【客服幫助】聯絡我們。",
+    message_center: "消息中心",
     "404": "暫無遊戲",
 }
 

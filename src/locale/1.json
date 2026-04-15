@@ -1,0 +1,39 @@
+{
+  "appcode": "game_001",
+  "uninstall_config": {
+    "appcode": "game_001",
+    "description": "游戏卸载挽留配置",
+    "state": 1,
+    "title_config": {
+      "zh-cn": "确定要卸载吗？",
+      "en-us": "Are you sure you want to uninstall?",
+      "ja-jp": "アンインストールしてもよろしいですか？"
+    },
+    "options": [
+      {
+        "option_key": "reason_lag",
+        "language_config": {
+          "zh-cn": "游戏卡顿/掉帧",
+          "en-us": "Game lag / frame drops",
+          "ja-jp": "ゲームのラグ/フレームドロップ"
+        }
+      },
+      {
+        "option_key": "reason_space",
+        "language_config": {
+          "zh-cn": "占用空间太大",
+          "en-us": "Takes up too much space",
+          "ja-jp": "容量が大きすぎる"
+        }
+      },
+      {
+        "option_key": "reason_boring",
+        "language_config": {
+          "zh-cn": "游戏内容不感兴趣",
+          "en-us": "Not interested in game content",
+          "ja-jp": "ゲーム内容に興味がない"
+        }
+      }
+    ]
+  }
+}

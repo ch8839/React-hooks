@@ -1,24 +1,26 @@
 interface FetcherOptions {
   method?: "GET" | "POST" | "PUT" | "DELETE";
-  headers?: Record<string, string>;
+  headers?: Record<string, any>;
+  params?: Record<string, any>;
   body?: any;
   host?: string;
   timeout?: number;
   abortController? : AbortController
 }
-const DefaultHost = "http://localhost:3000";
+const DefaultHost = "http://localhost:3100";
 
 export const fetcher = async <T>(url: string, options: FetcherOptions = {}) => {
   const {
     method = "GET",
     headers = {},
+    params,
     body,
     host = DefaultHost,
     timeout = 3000,
-    abortController
+    abortController,
   } = options;
-
-  const requestUrl = `${host}${url}`;
+  const queryString = params ? "?" + new URLSearchParams(params).toString() : '';
+  const requestUrl = `${host}${url}${queryString}`;
   const controller = abortController || new AbortController();
   // 结合 setTimeout 调用 controller.abort() 实现请求超时中止
   const timeId = setTimeout(() => controller.abort(), timeout);
